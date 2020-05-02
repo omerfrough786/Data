@@ -1,0 +1,44 @@
+
+
+<h1 class="text-center mb-3">{{this.headerTitle}}</h1>
+
+<form action="/api/members" method="POST" class="mb-4">
+    <div class="form-group">
+        <label for="title">Book Name</label>
+        <input type="text" name="title" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="author">Book Title</label>
+        <input type="text" name="author" class="form-control">
+    </div>
+    <input type="submit" value="Add" class="btn btn-dark btn-block">
+</form>
+
+<h4>Book List</h4>
+
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">BOOK NAME</th>
+      <th scope="col">AUTHOR</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each BookList}}
+        <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.author}}</td>                       
+            <td>
+            <button onclick={this.delete()} type="button" class="close bg-warning" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </td>
+
+        </tr>
+    {{/each}} 
+</tbody>
+</table>
+
+<a href="/api/members" class="btn btn-warning mt-4">Visit JSON</a>

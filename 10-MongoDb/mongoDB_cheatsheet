@@ -1,0 +1,31 @@
+//Show All DBs 
+show dbs
+
+//Show Current Database 
+db
+
+//Delete Database
+db.dropDatabase()
+
+//Create or switch to a Database
+use test1 -- switch to test1
+
+//Create Collection 
+db.createCollection('topics)
+
+//Show Collections
+ show collections
+
+ //Insert Row
+ db.topics.insert({
+     title: 'html',
+     time: '6 weeks',
+     elements: ['heading', 'structure']
+ })
+
+
+ //Get All Rows
+ db.topics.find()
+
+  //Get All Rows Formated
+ db.topics.find().pretty()
